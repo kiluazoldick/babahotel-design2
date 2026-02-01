@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baba Hôtel - Excellence Hôtelière à Ndongbong, Douala</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "baba-blue": "#7EC8E3",
+              "baba-red": "#FF5A5F",
+              "baba-dark": "#1a202c",
+              "baba-light": "#f8fafc",
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          rgba(126, 200, 227, 0.1) 0%,
+          rgba(255, 90, 95, 0.05) 100%
+        );
+      }
+      .hero-gradient {
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+          url("images/hero.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+      .room-gradient {
+        background: linear-gradient(to right, #7ec8e3, #4da6cc);
+      }
+      .stats-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .stats-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      }
+      .feature-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        border-left: 5px solid #7ec8e3;
+        transition: all 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateX(10px);
+        border-left-color: #ff5a5f;
+      }
+      .testimonial-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        position: relative;
+      }
+      .testimonial-card::before {
+        content: '"';
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 4rem;
+        color: #7ec8e3;
+        opacity: 0.2;
+        font-family: serif;
+      }
+      .floating-action {
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .section-divider {
+        height: 3px;
+        background: linear-gradient(to right, #7ec8e3, #ff5a5f);
+        width: 100px;
+        margin: 2rem auto;
+      }
+    </style>
+  </head>
+  <body class="bg-baba-light text-gray-800">
+    <!-- Navigation Moderne -->
+    <nav
+      class="bg-white/90 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b border-gray-100"
+    >
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-2">
+            <div class="bg-baba-blue p-2 rounded-lg">
+              <i data-feather="home" class="w-6 h-6 text-white"></i>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold text-baba-blue">BABA HÔTEL</h1>
+              <p class="text-xs text-gray-500 -mt-1">Logpom, Douala</p>
+            </div>
+          </div>
+
+          <div class="hidden lg:flex space-x-8">
+            <a
+              href="#accueil"
+              class="font-medium text-gray-700 hover:text-baba-blue transition-colors duration-300 flex items-center space-x-1"
+            >
+              <i data-feather="home" class="w-4 h-4"></i>
+              <span>Accueil</span>
+            </a>
+            <a
+              href="#chambres"
+              class="font-medium text-gray-700 hover:text-baba-blue transition-colors duration-300 flex items-center space-x-1"
+            >
+              <i data-feather="bed" class="w-4 h-4"></i>
+              <span>Chambres</span>
+            </a>
+            <a
+              href="#services"
+              class="font-medium text-gray-700 hover:text-baba-blue transition-colors duration-300 flex items-center space-x-1"
+            >
+              <i data-feather="star" class="w-4 h-4"></i>
+              <span>Services</span>
+            </a>
+            <a
+              href="#galerie"
+              class="font-medium text-gray-700 hover:text-baba-blue transition-colors duration-300 flex items-center space-x-1"
+            >
+              <i data-feather="image" class="w-4 h-4"></i>
+              <span>Galerie</span>
+            </a>
+            <a
+              href="#contact"
+              class="font-medium text-gray-700 hover:text-baba-blue transition-colors duration-300 flex items-center space-x-1"
+            >
+              <i data-feather="phone" class="w-4 h-4"></i>
+              <span>Contact</span>
+            </a>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <a
+              href="tel:+2376XXXXXX"
+              class="hidden md:flex items-center space-x-2 bg-baba-red text-white px-4 py-2 rounded-full hover:bg-red-600 transition duration-300"
+            >
+              <i data-feather="phone"></i>
+              <span>Réserver</span>
+            </a>
+            <button class="lg:hidden">
+              <i data-feather="menu" class="w-6 h-6 text-gray-700"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section Redesign -->
+    <section
+      id="accueil"
+      class="hero-gradient min-h-screen flex items-center relative overflow-hidden"
+    >
+      <div class="absolute inset-0 bg-black/40"></div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl mx-auto text-center text-white">
+          <div
+            class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6"
+          >
+            <i data-feather="award" class="w-4 h-4"></i>
+            <span class="text-sm font-medium">★★★★☆ 4.5/5 sur Google</span>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <span class="text-baba-blue">Confort</span> &
+            <span class="text-baba-red">Élégance</span> à Ndongbong
+          </h1>
+          <p class="text-xl mb-8 text-gray-200">
+            Découvrez notre collection exclusive de chambres et studios meublés,
+            conçus pour votre bien-être à des tarifs exceptionnels.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="#chambres"
+              class="bg-baba-red hover:bg-red-600 text-white font-bold py-4 px-8 rounded-full text-lg shadow-xl transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+            >
+              <i data-feather="eye"></i>
+              <span>Explorer nos chambres</span>
+            </a>
+            <a
+              href="tel:+2376XXXXXX"
+              class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-full text-lg border border-white/30 transition-all duration-300 flex items-center justify-center space-x-2"
+            >
+              <i data-feather="phone"></i>
+              <span>Contact rapide</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistiques flottantes -->
+      <div class="absolute bottom-10 left-0 right-0">
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="stats-card text-center">
+              <div class="text-3xl font-bold text-baba-blue">50+</div>
+              <div class="text-gray-600">Chambres</div>
+            </div>
+            <div class="stats-card text-center">
+              <div class="text-3xl font-bold text-baba-red">24/7</div>
+              <div class="text-gray-600">Service client</div>
+            </div>
+            <div class="stats-card text-center">
+              <div class="text-3xl font-bold text-baba-blue">100%</div>
+              <div class="text-gray-600">Satisfaction</div>
+            </div>
+            <div class="stats-card text-center">
+              <div class="text-3xl font-bold text-baba-red">5★</div>
+              <div class="text-gray-600">Propreté</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services en grille asymétrique -->
+    <section id="services" class="py-20 gradient-bg">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">
+            Pourquoi <span class="text-baba-blue">nous</span> choisir ?
+          </h2>
+          <div class="section-divider"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Baba Hôtel combine confort moderne, services premium et rapport
+            qualité-prix exceptionnel
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="feature-card">
+            <div class="flex items-start space-x-4">
+              <div class="bg-baba-blue/10 p-3 rounded-lg">
+                <i data-feather="wifi" class="w-6 h-6 text-baba-blue"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Wi-Fi Haut Débit</h3>
+                <p class="text-gray-600">
+                  Connexion fibre optique gratuite dans toutes nos chambres et
+                  espaces communs
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="flex items-start space-x-4">
+              <div class="bg-baba-red/10 p-3 rounded-lg">
+                <i data-feather="shield" class="w-6 h-6 text-baba-red"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Sécurité Totale</h3>
+                <p class="text-gray-600">
+                  Système de surveillance 24h/24 et personnel de sécurité
+                  qualifié
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="flex items-start space-x-4">
+              <div class="bg-baba-blue/10 p-3 rounded-lg">
+                <i data-feather="droplet" class="w-6 h-6 text-baba-blue"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Eau Chaude 24/7</h3>
+                <p class="text-gray-600">
+                  Système solaire garantissant l'eau chaude permanente
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="flex items-start space-x-4">
+              <div class="bg-baba-red/10 p-3 rounded-lg">
+                <i data-feather="tv" class="w-6 h-6 text-baba-red"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">TV Satellite</h3>
+                <p class="text-gray-600">
+                  +200 chaînes nationales et internationales incluses
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="flex items-start space-x-4">
+              <div class="bg-baba-blue/10 p-3 rounded-lg">
+                <i data-feather="wind" class="w-6 h-6 text-baba-blue"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Climatisation</h3>
+                <p class="text-gray-600">
+                  Système de climatisation réversible dans toutes les chambres
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="flex items-start space-x-4">
+              <div class="bg-baba-red/10 p-3 rounded-lg">
+                <i data-feather="coffee" class="w-6 h-6 text-baba-red"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Petit-déjeuner</h3>
+                <p class="text-gray-600">
+                  Option petit-déjeuner continental ou local disponible
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chambres - Présentation horizontale -->
+    <section id="chambres" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">
+            Nos <span class="text-baba-red">Chambres</span> &
+            <span class="text-baba-blue">Studios</span>
+          </h2>
+          <div class="section-divider"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Découvrez nos espaces soigneusement aménagés pour votre confort et
+            bien-être
+          </p>
+        </div>
+
+        <!-- Chambre Standard -->
+        <div
+          class="flex flex-col lg:flex-row items-center gap-12 mb-20 bg-gray-50 rounded-3xl p-8"
+        >
+          <div class="lg:w-1/2">
+            <div class="relative">
+              <img
+                src="images/chambre1.jpg"
+                alt="Chambre Standard"
+                class="rounded-2xl shadow-2xl"
+              />
+              <div
+                class="absolute -top-4 -left-4 bg-baba-red text-white px-4 py-2 rounded-full font-bold"
+              >
+                Populaire
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-3xl font-bold">Chambre Standard</h3>
+              <div class="text-2xl font-bold text-baba-blue">
+                25,000 <span class="text-lg">FCFA/nuit</span>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              Chambre élégante avec lit double Queen Size, salle de bain privée
+              avec douche italienne, climatisation silencieuse et vue sur la
+              cour intérieure.
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div class="flex items-center space-x-2">
+                <i data-feather="user" class="w-4 h-4 text-baba-blue"></i>
+                <span>2 personnes</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i data-feather="maximize" class="w-4 h-4 text-baba-blue"></i>
+                <span>25 m²</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i data-feather="wifi" class="w-4 h-4 text-baba-blue"></i>
+                <span>Wi-Fi gratuit</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i data-feather="tv" class="w-4 h-4 text-baba-blue"></i>
+                <span>TV Satellite</span>
+              </div>
+            </div>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="bg-baba-blue hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-full transition duration-300 flex items-center space-x-2"
+              >
+                <i data-feather="calendar"></i>
+                <span>Réserver</span>
+              </a>
+              <a
+                href="#"
+                class="border border-baba-blue text-baba-blue hover:bg-baba-blue/10 font-bold py-3 px-6 rounded-full transition duration-300"
+              >
+                Plus de détails
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chambre Deluxe -->
+        <div
+          class="flex flex-col lg:flex-row-reverse items-center gap-12 mb-20 bg-gray-50 rounded-3xl p-8"
+        >
+          <div class="lg:w-1/2">
+            <div class="relative">
+              <img
+                src="images/chambre2.jpg"
+                alt="Chambre Deluxe"
+                class="rounded-2xl shadow-2xl"
+              />
+              <div
+                class="absolute -top-4 -right-4 bg-baba-blue text-white px-4 py-2 rounded-full font-bold"
+              >
+                Confort Supérieur
+              </div>
+            </div>
+          </div>
+          <div class="lg:w-1/2">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-3xl font-bold">Chambre Deluxe</h3>
+              <div class="text-2xl font-bold text-baba-red">
+                35,000 <span class="text-lg">FCFA/nuit</span>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-6">
+              Espace spacieux avec coin salon séparé, parfait pour les séjours
+              d'affaires ou les longs séjours. Salle de bain avec baignoire,
+              bureau ergonomique et minibar.
+            </p>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+              <div class="flex items-center space-x-2">
+                <i data-feather="users" class="w-4 h-4 text-baba-red"></i>
+                <span>3 personnes</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i data-feather="maximize" class="w-4 h-4 text-baba-red"></i>
+                <span>35 m²</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i data-feather="coffee" class="w-4 h-4 text-baba-red"></i>
+                <span>Machine à café</span>
+              </div>
+              <div class="flex items-center space-x-2">
+                <i data-feather="briefcase" class="w-4 h-4 text-baba-red"></i>
+                <span>Bureau</span>
+              </div>
+            </div>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="bg-baba-red hover:bg-red-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 flex items-center space-x-2"
+              >
+                <i data-feather="calendar"></i>
+                <span>Réserver</span>
+              </a>
+              <a
+                href="#"
+                class="border border-baba-red text-baba-red hover:bg-baba-red/10 font-bold py-3 px-6 rounded-full transition duration-300"
+              >
+                Plus de détails
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galerie interactive -->
+    <section id="galerie" class="py-20 gradient-bg">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">
+            Galerie <span class="text-baba-blue">Virtuelle</span>
+          </h2>
+          <div class="section-divider"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Explorez nos espaces en 360° et découvrez l'ambiance unique de Baba
+            Hôtel
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
+          <div class="col-span-2 row-span-2">
+            <div class="relative rounded-2xl overflow-hidden h-96">
+              <img
+                src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Lobby"
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6"
+              >
+                <div class="text-white">
+                  <h4 class="text-xl font-bold">Lobby d'accueil</h4>
+                  <p class="text-sm">Espace moderne et chaleureux</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-2xl overflow-hidden h-44">
+            <img
+              src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Salle de bain"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+          </div>
+          <div class="rounded-2xl overflow-hidden h-44">
+            <img
+              src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Chambre"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+          </div>
+          <div class="rounded-2xl overflow-hidden h-44">
+            <img
+              src="images/studio.jpg"
+              alt="Extérieur"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+          </div>
+          <div class="rounded-2xl overflow-hidden h-44">
+            <img
+              src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Studio"
+              class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+            />
+          </div>
+        </div>
+
+        <div class="text-center">
+          <a
+            href="#"
+            class="inline-flex items-center space-x-2 text-baba-blue hover:text-blue-600 font-bold text-lg"
+          >
+            <span>Voir toute la galerie</span>
+            <i data-feather="arrow-right" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Témoignages -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4">
+            Ils nous font <span class="text-baba-red">confiance</span>
+          </h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="testimonial-card">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-baba-blue/20 rounded-full flex items-center justify-center mr-4"
+              >
+                <i data-feather="user" class="w-6 h-6 text-baba-blue"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Marie K.</h4>
+                <div class="flex text-yellow-400">
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Séjour exceptionnel ! La chambre était impeccable, le personnel
+              très attentionné. Je recommande vivement Baba Hôtel pour vos
+              séjours à Douala."
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-baba-red/20 rounded-full flex items-center justify-center mr-4"
+              >
+                <i data-feather="user" class="w-6 h-6 text-baba-red"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Jean-Paul D.</h4>
+                <div class="flex text-yellow-400">
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Parfait pour les voyages d'affaires. Wi-Fi rapide, chambre calme
+              et bien équipée. L'emplacement est idéal pour mes rendez-vous
+              professionnels."
+            </p>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 bg-baba-blue/20 rounded-full flex items-center justify-center mr-4"
+              >
+                <i data-feather="user" class="w-6 h-6 text-baba-blue"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Familie T.</h4>
+                <div class="flex text-yellow-400">
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                  <i data-feather="star" class="w-4 h-4"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600 italic">
+              "Studio familial parfait pour notre séjour d'une semaine. Cuisine
+              équipée, espace spacieux. Les enfants ont adoré. Nous reviendrons
+              certainement !"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA et Contact -->
+    <section id="contact" class="py-20 room-gradient text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl font-bold mb-6">
+            Prêt pour une expérience
+            <span class="text-white">inoubliable</span> ?
+          </h2>
+          <p class="text-xl mb-8 text-white/90">
+            Réservez dès maintenant et bénéficiez de notre offre de bienvenue
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <i data-feather="gift" class="w-12 h-12 mb-4 mx-auto"></i>
+              <h4 class="text-xl font-bold mb-2">10% de réduction</h4>
+              <p class="text-white/80">
+                Sur votre première réservation en ligne
+              </p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <i data-feather="coffee" class="w-12 h-12 mb-4 mx-auto"></i>
+              <h4 class="text-xl font-bold mb-2">Petit-déjeuner offert</h4>
+              <p class="text-white/80">Pour tout séjour de 3 nuits ou plus</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+              <i data-feather="clock" class="w-12 h-12 mb-4 mx-auto"></i>
+              <h4 class="text-xl font-bold mb-2">Check-in flexible</h4>
+              <p class="text-white/80">Arrivée possible 24h/24 sur demande</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a
+              href="tel:+2376XXXXXX"
+              class="bg-white text-baba-blue hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition duration-300 flex items-center justify-center space-x-2"
+            >
+              <i data-feather="phone"></i>
+              <span>Appeler maintenant</span>
+            </a>
+            <a
+              href="https://wa.me/2376XXXXXX"
+              class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 flex items-center justify-center space-x-2"
+            >
+              <i data-feather="message-square"></i>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Moderne -->
+    <footer class="bg-baba-dark text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <div class="bg-baba-blue p-2 rounded-lg">
+                <i data-feather="home" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-2xl font-bold">BABA HÔTEL</h3>
+            </div>
+            <p class="text-gray-400 mb-4">
+              Votre havre de paix à Ndongbong, Douala. Confort, élégance et
+              hospitalité authentique.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition"
+              >
+                <i data-feather="facebook" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition"
+              >
+                <i data-feather="instagram" class="w-5 h-5"></i>
+              </a>
+              <a
+                href="#"
+                class="bg-gray-800 hover:bg-gray-700 p-3 rounded-full transition"
+              >
+                <i data-feather="twitter" class="w-5 h-5"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4 text-baba-blue">
+              Contact Rapide
+            </h4>
+            <ul class="space-y-3">
+              <li class="flex items-center space-x-3">
+                <i data-feather="map-pin" class="w-5 h-5 text-baba-red"></i>
+                <span>Rue Principale, Logpom, Douala</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i data-feather="phone" class="w-5 h-5 text-baba-red"></i>
+                <span>+237 6XX XXX XXX</span>
+              </li>
+              <li class="flex items-center space-x-3">
+                <i data-feather="mail" class="w-5 h-5 text-baba-red"></i>
+                <span>contact@babahotel.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4 text-baba-blue">Horaires</h4>
+            <ul class="space-y-2">
+              <li class="flex justify-between">
+                <span>Réception</span>
+                <span class="text-baba-red">24h/24</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Check-in</span>
+                <span>14:00 - 00:00</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Check-out</span>
+                <span>Avant 12:00</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold mb-4 text-baba-blue">Newsletter</h4>
+            <p class="text-gray-400 mb-4">
+              Inscrivez-vous pour recevoir nos offres exclusives
+            </p>
+            <form class="space-y-2">
+              <input
+                type="email"
+                placeholder="Votre email"
+                class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-baba-blue"
+              />
+              <button
+                type="submit"
+                class="w-full bg-baba-red hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+              >
+                S'inscrire
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-8 text-center">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 mb-4 md:mb-0">
+              &copy; 2026 Baba Hôtel. Tous droits réservés.
+            </p>
+            <div class="flex space-x-6">
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Mentions légales</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Confidentialité</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >CGU</a
+              >
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                >Cookies</a
+              >
+            </div>
+          </div>
+          <div class="mt-4 text-gray-500 text-sm">
+            <p>Site conçu avec passion pour votre confort et satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bouton WhatsApp flottant -->
+    <a
+      href="https://wa.me/2376XXXXXX"
+      class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl z-50 transition-all duration-300 floating-action"
+    >
+      <i data-feather="message-square" class="w-6 h-6"></i>
+    </a>
+
+    <script>
+      feather.replace();
+
+      // Animation au scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fadeIn");
+            }
+          });
+        }, observerOptions);
+
+        // Observer les sections
+        document.querySelectorAll("section").forEach((section) => {
+          observer.observe(section);
+        });
+
+        // Navigation smooth
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
